@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Path to python
+PYTHON_EXECUTABLE="path_to/python3"  # Replace with the correct Python path
+
+# path to Python script
+SCRIPT_PATH="path_to_\encrypt.py"  # Replace with the correct path of your script
+
+# Verify python installation
+if [ ! -x "$PYTHON_EXECUTABLE" ]; then
+    echo "Python not found. Make sure Python is installed."
+    exit 1
+fi
+
+# verify if script exist
+if [ ! -f "$SCRIPT_PATH" ]; then
+    echo "Python script not found in $SCRIPT_PATH. Check the script path."
+    exit 1
+fi
+
+# Run script
+"$PYTHON_EXECUTABLE" "$SCRIPT_PATH"
